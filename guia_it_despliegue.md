@@ -9,17 +9,12 @@ Actualmente, estos servicios corren en una cuenta personal de **Supabase**. TI d
 
 ---
 
-## 2. Opciones de Despliegue para TI
+## 2. Estrategia de Despliegue: Supabase Local con Docker
 
-### Opción A: Supabase en la Nube (La más rápida)
-La empresa crea su propia cuenta en [supabase.com](https://supabase.com).
-- **Ventaja**: No requiere mantenimiento de servidores de base de datos. El Login de Google ya está integrado.
-- **Qué hacer**: TI entrega las nuevas `URL` y `API KEYS` al desarrollador para actualizar los archivos `.env`.
+Para este proyecto, la empresa ha optado por un **despliegue 100% local**. Esto significa que se instalarán todos los servicios (Base de datos y Autenticación) dentro de los servidores de la empresa usando Docker.
 
-### Opción B: Supabase Local con Docker (Privacidad Total)
-Si la empresa no quiere usar la nube, deben instalar Supabase en sus propios servidores usando Docker.
-- **Ventaja**: Los datos nunca salen de la red de la empresa.
-- **Qué hacer**: Seguir la [guía oficial de Supabase Self-Hosting](https://supabase.com/docs/guides/self-hosting/docker). Una vez instalado, el repositorio de la aplicación se conecta a esa instancia local.
+- **Ventaja**: Privacidad total; los datos y usuarios nunca salen de la red corporativa.
+- **Qué hacer**: El equipo de TI debe seguir la [guía oficial de Supabase Self-Hosting](https://supabase.com/docs/guides/self-hosting/docker) para levantar la infraestructura base. Una vez instalada, este repositorio se conectará a dicha instancia local.
 
 ---
 
