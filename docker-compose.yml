@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    restart: always
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    restart: always
+    depends_on:
+      - backend
+
+# Notas para TI:
+# 1. Asegurarse de que .env en backend tenga la URL correcta del nuevo Supabase propio.
+# 2. El frontend está configurado para ser servido por Nginx en el puerto 80.
